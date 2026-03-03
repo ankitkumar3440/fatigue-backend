@@ -2,8 +2,10 @@ services:
   - type: web
     name: fatigue-detection-api
     env: python
+    pythonVersion: "3.11.9"
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: MODEL_DIR
         value: models
+
